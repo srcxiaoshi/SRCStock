@@ -41,6 +41,7 @@
 		3C96D01A20FE2E6100457229 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C96D01320FE2E6100457229 /* AFSecurityPolicy.m */; };
 		3CA95B9D21212B5E00A66A28 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA95B9B21212B5E00A66A28 /* ChartView.m */; };
 		3CA95BA321217E5700A66A28 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA95BA221217E5700A66A28 /* RootViewController.m */; };
+		3CDD67C82136D6E100749F73 /* NSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDD67C72136D6E100749F73 /* NSFoundation.framework */; };
 		3CECA35F2113F45100866576 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CECA35E2113F45100866576 /* BaseView.m */; };
 		3CECA362211433FA00866576 /* KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CECA361211433FA00866576 /* KLineModel.m */; };
 		3CECA36521143EC900866576 /* ChartWithRealTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CECA36421143EC900866576 /* ChartWithRealTimeModel.m */; };
@@ -136,6 +137,7 @@
 		3CA95B9C21212B5E00A66A28 /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
 		3CA95BA121217E5700A66A28 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		3CA95BA221217E5700A66A28 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		3CDD67C72136D6E100749F73 /* NSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NSFoundation.framework; sourceTree = "<group>"; };
 		3CECA35D2113F45100866576 /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		3CECA35E2113F45100866576 /* BaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		3CECA360211433FA00866576 /* KLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLineModel.h; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CDD67C82136D6E100749F73 /* NSFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +199,7 @@
 		3C42EB2420FCDA88002D6B23 /* Stock */ = {
 			isa = PBXGroup;
 			children = (
+				3CDD67C42136D65800749F73 /* ShareLib */,
 				3C8F04332113041D00E8D8D2 /* Controller */,
 				3C8F04322113041D00E8D8D2 /* Model */,
 				3C8F04342113041D00E8D8D2 /* UI */,
@@ -391,6 +395,14 @@
 				3CA95B9B21212B5E00A66A28 /* ChartView.m */,
 			);
 			path = ChartView;
+			sourceTree = "<group>";
+		};
+		3CDD67C42136D65800749F73 /* ShareLib */ = {
+			isa = PBXGroup;
+			children = (
+				3CDD67C72136D6E100749F73 /* NSFoundation.framework */,
+			);
+			path = ShareLib;
 			sourceTree = "<group>";
 		};
 		3CECA35C2113F43B00866576 /* View */ = {
@@ -737,6 +749,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SPF22QQWVJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Stock/ShareLib",
+				);
 				INFOPLIST_FILE = Stock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -754,6 +770,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SPF22QQWVJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Stock/ShareLib",
+				);
 				INFOPLIST_FILE = Stock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
