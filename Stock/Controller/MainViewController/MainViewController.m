@@ -17,7 +17,7 @@
 #import "ChartWithKLineModel.h"
 #import "ChartWithBargainModel.h"
 #import "ChartWithRealTimeModel.h"
-
+#import <SRCFoundation/SRCFoundation.h>
 
 @interface MainViewController ()
 
@@ -38,6 +38,10 @@
     [self loadData];
 
     
+    //这里测试foundation
+    NSMutableString *str=[NSMutableString stringWithFormat:@"00"];
+    
+    NSLog(@"nsarr = %@",str);
 }
 
 -(void)loadData

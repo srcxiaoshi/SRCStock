@@ -41,7 +41,7 @@
 		3C96D01A20FE2E6100457229 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C96D01320FE2E6100457229 /* AFSecurityPolicy.m */; };
 		3CA95B9D21212B5E00A66A28 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA95B9B21212B5E00A66A28 /* ChartView.m */; };
 		3CA95BA321217E5700A66A28 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA95BA221217E5700A66A28 /* RootViewController.m */; };
-		3CDD67C82136D6E100749F73 /* NSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDD67C72136D6E100749F73 /* NSFoundation.framework */; };
+		3CB1D7102138D0D500488B2C /* SRCFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB1D70F2138D0D500488B2C /* SRCFoundation.framework */; };
 		3CECA35F2113F45100866576 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CECA35E2113F45100866576 /* BaseView.m */; };
 		3CECA362211433FA00866576 /* KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CECA361211433FA00866576 /* KLineModel.m */; };
 		3CECA36521143EC900866576 /* ChartWithRealTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CECA36421143EC900866576 /* ChartWithRealTimeModel.m */; };
@@ -137,7 +137,7 @@
 		3CA95B9C21212B5E00A66A28 /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
 		3CA95BA121217E5700A66A28 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		3CA95BA221217E5700A66A28 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		3CDD67C72136D6E100749F73 /* NSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NSFoundation.framework; sourceTree = "<group>"; };
+		3CB1D70F2138D0D500488B2C /* SRCFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SRCFoundation.framework; sourceTree = "<group>"; };
 		3CECA35D2113F45100866576 /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		3CECA35E2113F45100866576 /* BaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		3CECA360211433FA00866576 /* KLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLineModel.h; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CDD67C82136D6E100749F73 /* NSFoundation.framework in Frameworks */,
+				3CB1D7102138D0D500488B2C /* SRCFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +176,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C154B4B21382AE300FDFB51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C42EB1920FCDA87002D6B23 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +190,7 @@
 				3C42EB2420FCDA88002D6B23 /* Stock */,
 				3C42EB3D20FCDA89002D6B23 /* StockTests */,
 				3C42EB4820FCDA89002D6B23 /* StockUITests */,
+				3C154B4B21382AE300FDFB51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -400,7 +408,7 @@
 		3CDD67C42136D65800749F73 /* ShareLib */ = {
 			isa = PBXGroup;
 			children = (
-				3CDD67C72136D6E100749F73 /* NSFoundation.framework */,
+				3CB1D70F2138D0D500488B2C /* SRCFoundation.framework */,
 			);
 			path = ShareLib;
 			sourceTree = "<group>";
@@ -687,6 +695,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -738,6 +750,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -758,9 +774,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Src.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ShareLib/**";
 			};
 			name = Debug;
 		};
@@ -779,9 +800,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Src.Stock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ShareLib/**";
 			};
 			name = Release;
 		};
